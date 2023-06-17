@@ -1,0 +1,36 @@
+API de Usuarios
+
+Esta API permite administrar usuarios, incluyendo el inicio de sesión, registro de nuevos usuarios y cambio de contraseña.
+
+Rutas
+Inicio de Usuario
+POST /signin
+Inicia sesión de un usuario existente.
+Parámetros requeridos:
+email: Correo electrónico del usuario.
+password: Contraseña del usuario.
+Retorna:
+200 OK si la autenticación es exitosa y el usuario se ha logueado correctamente.
+400 Bad Request si las credenciales son incorrectas o faltan parámetros.
+
+    Registro de un Nuevo Usuario
+        POST /signup
+            Registra un nuevo usuario en el sistema.
+            Parámetros requeridos:
+                email: Correo electrónico del usuario.
+                password: Contraseña del usuario.
+                Otros campos requeridos según los requisitos del usuario (nombre, apellido, etc.).
+            Retorna:
+                200 OK si el registro es exitoso y el usuario se ha creado correctamente.
+                400 Bad Request si faltan campos requeridos o hay errores en los datos proporcionados.
+
+    Cambio de Contraseña
+        PUT /changepass/:email
+            Permite al usuario cambiar su contraseña.
+            Parámetros requeridos:
+                email: Correo electrónico del usuario.
+                oldPassword: Contraseña actual del usuario.
+                newPassword: Nueva contraseña del usuario.
+            Retorna:
+                200 OK si el cambio de contraseña es exitoso y la contraseña se ha actualizado correctamente.
+                400 Bad Request si los datos proporcionados son incorrectos o faltan parámetros.
